@@ -19,7 +19,7 @@
         document.body.appendChild(renderer.domElement);
         
         let controls = new THREE.OrbitControls(camera, renderer.domElement);
-        controls.enableZoom = false;
+        controls.enableZoom = true;
         
         let urls = [
           'posx.jpg', 'negx.jpg',
@@ -33,7 +33,7 @@
         sphereCamera.position.set(0, 100, 0);
         scene.add(sphereCamera);
         let sphereMaterial = new THREE.MeshBasicMaterial( {envMap: sphereCamera.renderTarget} );
-        let sphereGeo =  new THREE.SphereGeometry(400, 50, 50);
+        let sphereGeo =  new THREE.SphereGeometry(350,50,50);
 
         let mirrorSphere = new THREE.Mesh(sphereGeo, sphereMaterial);
         mirrorSphere.position.set(0, 100, 0);
