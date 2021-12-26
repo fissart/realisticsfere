@@ -33,7 +33,7 @@
         sphereCamera.position.set(0, 100, 0);
         scene.add(sphereCamera);
         let sphereMaterial = new THREE.MeshBasicMaterial( {envMap: sphereCamera.renderTarget} );
-        let sphereGeo =  new THREE.SphereGeometry(400, 50, 50);
+        let sphereGeo =  new THREE.ThorusKnotGeometry(400, 50, 50);
 
         let mirrorSphere = new THREE.Mesh(sphereGeo, sphereMaterial);
         mirrorSphere.position.set(0, 100, 0);
@@ -43,7 +43,7 @@
       }
       function render() {
         renderer.render(scene,camera);
-        //sphereCamera.updateCubeMap( renderer, scene );
+        sphereCamera.updateCubeMap( renderer, scene );
         requestAnimationFrame(render);
       }
       init();
